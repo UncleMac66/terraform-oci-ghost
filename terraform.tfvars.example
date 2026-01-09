@@ -1,0 +1,17 @@
+# Example variables for OCI Ghost Blog Terraform Stack
+# Copy this file to terraform.tfvars and fill in your own (private) values.
+
+compartment_ocid        = "ocid1.compartment.oc1..<YOUR-OCI-COMPARTMENT-OCID>"
+availability_domain     = "<YOUR OCI AD NAME>"   # e.g. "kIdk:US-ASHBURN-AD-1"
+instance_display_name   = "ghost-blog"
+source_id               = "<OCI IMAGE OCID FOR UBUNTU/ORACLE LINUX>"
+ssh_public_key          = "ssh-rsa AAAA..."
+
+# Optional but recommended:
+hostname_label          = "ghost"
+user_data_path          = "cloud-init/ghost-init.sh"
+
+# Network (optional; most deployments can use defaults)
+vcn_cidr                = "10.0.0.0/16"
+public_subnet_cidr      = "10.0.1.0/24"
+private_subnet_cidr     = "10.0.2.0/24"

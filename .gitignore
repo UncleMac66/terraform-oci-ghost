@@ -1,0 +1,35 @@
+# Terraform state, config, and provider files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform plan output
+*.plan
+
+# General binary/large/archive/log files
+*.zip
+*.tar.gz
+*.tgz
+*.bak
+*.log
+
+# OS/system/IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Ignore cloud-init logs (can become large)
+cloud-init.log
+cloud-init-output.log

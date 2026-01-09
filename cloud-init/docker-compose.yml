@@ -1,0 +1,39 @@
+services:
+  ghost:
+    image: ghost:6
+    container_name: ghost_blog
+    restart: unless-stopped
+    ports:
+      - "2368:2368"
+    depends_on:
+      - db
+    environment:
+      url: http:/localhost:2368
+      mail__transport: SMTP
+      mail__options__host: smtp.gmail.com
+      mail__options__port: 587
+      mail__options__secure: "false"
+      mail__options__auth__user: <your-gmail-address>
+      mail__options__auth__pass: <gmail-app-password>
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: ghostuser
+      database__connection__password: password
+      database__connection__database: ghostdb
+    volumes:
+      - ./content:/var/lib/ghost/content
+
+  db:
+    image: mysql:8
+    container_name: ghost_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: your-root-password
+      MYSQL_DATABASE: ghostdb
+      MYSQL_USER: ghostuser
+      MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
