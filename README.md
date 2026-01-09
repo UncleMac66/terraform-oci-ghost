@@ -18,7 +18,7 @@ This stack reads all network and credential information from `~/.oci/config` aut
 
 ## Cloud Resources
 
-- **VCN**: Public and private subnets, internet gateway/NAT gateway, routing, security lists (opens SSH + Ghost port 2368 to the world)
+- **VCN**: Public and private subnets, internet gateway/NAT gateway, routing, security lists
 - **Compute Instance**: `VM.Standard.E6.Flex` (8 OCPUs, 128GB RAM)
 - **Docker**: Automatically installed; Ghost launches on boot via cloud-init
 - **Caddy**: Automatically set up https/ssl termination and coordination with Let's Encrypt
@@ -49,7 +49,8 @@ This stack reads all network and credential information from `~/.oci/config` aut
 
 4. **Plan & Deploy:**
    ```
-   terraform apply
+   # If you're bold go ahead, otherwise plan first
+   terraform apply 
    ```
 
 5. **Access Ghost Blog:**  
