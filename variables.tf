@@ -1,7 +1,6 @@
 variable "compartment_ocid" {
   description = "The OCID of the compartment where resources should be created. default: nacie mac compart"
   type        = string
-  default     = "ocid1.compartment.oc1..aaaaaaaa4m4un4na6zounmutzjgfzfybb7xc4drkiqv4ygqprl73oh2rfvoa"
 }
 
 variable "vcn_cidr" {
@@ -36,7 +35,6 @@ variable "instance_shape" {
 variable "availability_domain" {
   description = "The availability domain where the instance should be launched (default: 'jLaG:US-ASHBURN-AD-2')."
   type        = string
-  default     = "jLaG:US-ASHBURN-AD-2"
 }
 
 variable "instance_ocpus" {

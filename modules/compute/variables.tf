@@ -1,7 +1,6 @@
 variable "compartment_ocid" {
   description = "The OCID of the compartment in which to launch the compute instance."
   type        = string
-  default = "ocid1.compartment.oc1..aaaaaaaa4m4un4na6zounmutzjgfzfybb7xc4drkiqv4ygqprl73oh2rfvoa"
 }
 
 variable "availability_domain" {
