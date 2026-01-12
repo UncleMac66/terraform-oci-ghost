@@ -1,5 +1,5 @@
 variable "compartment_ocid" {
-  description = "The OCID of the compartment where resources should be created. default: nacie mac compart"
+  description = "The OCID of the compartment where resources should be created."
   type        = string
 }
 
@@ -33,7 +33,7 @@ variable "instance_shape" {
 }
 
 variable "availability_domain" {
-  description = "The availability domain where the instance should be launched (default: 'jLaG:US-ASHBURN-AD-2')."
+  description = "The availability domain where the instance should be launched (e.g. 'jLaG:US-ASHBURN-AD-2')."
   type        = string
 }
 
