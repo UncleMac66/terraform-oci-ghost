@@ -6,6 +6,8 @@ set -e
 # in case there's a dns resolve error
 sudo systemctl restart systemd-resolved
 
+sleep 10
+
 # Update and install prerequisites
 apt-get update -y
 apt-get install -y \
@@ -34,7 +36,6 @@ fi
 
 # Open ports if ufw is active
 if systemctl is-active ufw &>/dev/null && ufw status | grep -q active; then
-  ufw allow 2368/tcp
   ufw allow 22/tcp
   ufw allow 443/tcp
   ufw allow 80/tcp
@@ -46,5 +47,8 @@ install-caddy.sh
 
 mkdir ~/ghost
 cp docker-compose.yml ~/ghost
+cp install-caddy.sh ~/ghost
+cp ghost-init.sh ~/ghost
 cd ~/ghost
+
 docker compose up -d 
